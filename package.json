@@ -1,0 +1,23 @@
+{
+  "name": "books",
+  "version": "1.0.0",
+  "description": "A new React-based Google Books Search app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/je33ica/Books.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/je33ica/Books/issues"
+  },
+  "homepage": "https://github.com/je33ica/Books#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
