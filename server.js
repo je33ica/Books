@@ -46,9 +46,9 @@ mongoose
     throw new Error(err);
   });
 
-app.use((req, res, next) => {
-  console.log("incoming res", req.path);
-  next();
-});
+// app.use((req, res, next) => {
+//   console.log("incoming res", req.path);
+//   next();
+// });
 
 // Send every other request to the React app
