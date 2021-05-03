@@ -1,21 +1,21 @@
 // import "./utils/";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Nav from "./pages/Nav";
 import SearchBooks from "./pages/Searchbooks";
-import SavedBooks from "./pages/SavedBooks";
+import SavedBooksPage from "./pages/SavedBooks";
 import About from "./pages/About";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Nav />
 
       <div className="App">
         <Route exact path="/about" component={About} />
-        <Route exact path="/SearchBooks" component={SearchBooks} />
-        <Route exact path="/SavedBooks" component={SavedBooks} />
+        <Route exact path="/searchBooks" component={SearchBooks} />
+        <Route exact path="/savedBooks" component={SavedBooksPage} />
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
