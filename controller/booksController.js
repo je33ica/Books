@@ -30,3 +30,24 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
 };
+// const db = require("../models");
+
+// module.exports = {
+//   findAll: (req, res) => {
+//     //empty obj as no params
+//     db.Book.find({})
+//       .then((response) => res.json(response))
+//       .catch((err) => res.status(422).json(err));
+//   },
+//   //save a book to the db
+//   create: function (req, res) {
+//     db.Book.create(req.body)
+//       .then((response) => res.json(response))
+//       .catch((err) => res.status(422).json(err));
+//   },
+//   delete: function (req, res) {
+//     db.Book.findByIdAndDelete(req.params.id)
+//       .then((response) => res.json(response))
+//       .catch((err) => res.status(422).json(err));
+//   },
+// };
