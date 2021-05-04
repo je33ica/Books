@@ -47,21 +47,25 @@ function SearchBooks() {
       <div>
         <form onSubmit={hanldeSubmit}>
           {/* we are controlling the value of the input field */}
-          <input value={search} onChange={handleChange} />
+          <input
+            value={search}
+            onChange={handleChange}
+            placeholder="Search for books"
+          />
           <button role="submit">search</button>
         </form>
       </div>
       <div>
-        <ul>
-          {books.map(({ volumeInfo }, index) => {
-            return (
-              <li key={index}>
-                <div>
-                  <h4>Title {volumeInfo.title}</h4>
-                  <h4>Author {volumeInfo.authors}</h4>
-                  <h4>Category {volumeInfo.categories}</h4>
-                  <p>Description{volumeInfo.description}</p>
-                  <h4>
+        <div>
+          <div className="grid">
+            {books.map(({ volumeInfo }, index) => {
+              return (
+                <div className="bookCard" key={index}>
+                  <h5>Title: {volumeInfo.title}</h5>
+                  <p>Author: {volumeInfo.authors}</p>
+                  <p>Category: {volumeInfo.categories}</p>
+                  <p>Description: {volumeInfo.description}</p>
+                  <p>
                     <img
                       alt="book"
                       src={
@@ -69,14 +73,16 @@ function SearchBooks() {
                         volumeInfo.imageLinks?.thumbnail || bookPlaceholder
                       }
                     />
-                  </h4>
+                  </p>
 
                   <button
+                    className="btn"
                     onClick={() => handleViewClick(volumeInfo.previewLink)}
                   >
                     view
                   </button>
                   <button
+                    className="btn"
                     onClick={() => {
                       hanldeSaveClick({
                         title: volumeInfo.title,
@@ -89,19 +95,14 @@ function SearchBooks() {
                   >
                     save
                   </button>
+                  <hr style={{ color: "white" }}></hr>
                 </div>
-              </li>
-            );
-          })}
-        </ul>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 export default SearchBooks;
-
-// const SearchBooks = () => {
-//   return <h1> seach book page</h1>;
-// };
-
-// export default SearchBooks;

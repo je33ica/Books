@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import API from "../utils/API";
+import bookPlaceholder from "../images/bookPlaceholder.jpeg";
 
 const { findSavedBooks, deleteSavedBook } = API;
 
@@ -9,16 +10,17 @@ const SavedBooks = () => {
   useEffect(() => {
     findSavedBooks()
       .then(({ data }) => setSavedBooks(data))
+
       .catch((err) => console.log(err));
   }, []);
-
+  console.log("th books", savedBooks);
   const handleViewClick = (link) => {
     //will open the link in a new tab
     window.open(link, "_blank");
   };
 
   const handleDeleteClick = (_id) => {
-    //remvoing the book form view but not the DB - optomistic UI
+    //removing the book form view but not the DB - optomistic UI
     const newSavedBooks = savedBooks.filter((book) => book._id !== _id);
 
     setSavedBooks(newSavedBooks);
@@ -33,21 +35,23 @@ const SavedBooks = () => {
 
   return (
     <div>
-      <ul>
-        {savedBooks.map((book) => {
-          return (
-            <li key={book._id}>
-              <div>
-                <h4>{book.title} </h4>
-                <button onClick={() => handleViewClick(book.link)}>view</button>
-                <button onClick={() => handleDeleteClick(book._id)}>
-                  delete
-                </button>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+      {savedBooks.map((book) => {
+        return (
+          <div className="bookCard" key={book._id}>
+            <div>
+              <h4>{book.title} </h4>
+              <h5>{book.authors}</h5>
+              <img alt="book" src={book.image || bookPlaceholder} />
+            </div>
+            <button className="btn" onClick={() => handleViewClick(book.link)}>
+              view
+            </button>
+            <button className="btn" onClick={() => handleDeleteClick(book._id)}>
+              delete
+            </button>
+          </div>
+        );
+      })}
     </div>
   );
 };

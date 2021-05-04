@@ -1,13 +1,44 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(./images/stacked.jpeg);
+}
+h1,
+h4 {
+  text-align: center;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.bookCard {
+  width: 90%;
+  max-width: 600px;
+  margin: 10px auto;
+  text-align: center;
+
+  background-color: rgba(204, 222, 236, 0.927);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border-style: solid;
+  border-color: rgb(25, 94, 206);
+}
+form {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 5px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button.btn {
+  margin: 4px;
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(25, 94, 206);
+  color: aliceblue;
 }
